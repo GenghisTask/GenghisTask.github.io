@@ -177,3 +177,10 @@ epub_exclude_files = ['search.html']
 
 
 # -- Extension configuration -------------------------------------------------
+html_context = {
+    "display_github": True, # Integrate GitHub
+    "github_user": "GenghisTask", # Username
+    "github_repo": "GenghisTask.github.io", # Repo name
+    "github_version": "main", # Version
+    "conf_py_path": "/", # Path in the checkout to the docs root
+}
