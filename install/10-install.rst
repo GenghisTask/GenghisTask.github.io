@@ -4,7 +4,7 @@ Install
 `Fork this project 
  <https://github.com/GenghisTask/Management/fork>`__ to get a workspace of your own and run :
 
-``docker run  -v /var/run/docker.sock:/var/run/docker.sock  -e GIT_BRANCH=main -e GIT_REPO='ssh://git@github.com/YouGit/Workspace.git' --network=host  genghistask/ui:2.1.1``
+``docker run  -v /var/run/docker.sock:/var/run/docker.sock  -e GIT_BRANCH=main -e GIT_REPO='ssh://git@github.com/YouGit/Workspace.git' --network=host  genghistask/ui``
 
 +--------------------+-------------------------------+----------------+
 | Argument           | Description                   | Default        |
@@ -32,8 +32,8 @@ Install
 | ``pwd``/workspace/ | from the host                 |                |
 | :/app/data/api     |                               |                |
 +--------------------+-------------------------------+----------------+
-| genghistask/ui:2.1 | This docker image             | latest         |
-| .1                 |                               |                |
+| genghistask/ui     | This docker image             | latest         |
+|                    |                               |                |
 +--------------------+-------------------------------+----------------+
 
 It is better to change GIT_REPO url to match your fork, for example :
