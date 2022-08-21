@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Configure &mdash; Genghistask 2.1.1 documentation</title>
+  <title>Database storage &mdash; Genghistask 2.1.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Database storage" href="database.html" />
-    <link rel="prev" title="Install" href="10-install.html" /> 
+    <link rel="next" title="Presentation" href="../basic/10-definition.html" />
+    <link rel="prev" title="Configure" href="configure.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,13 +44,8 @@
 <p class="caption" role="heading"><span class="caption-text">Install</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="10-install.html">Install</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Configure</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#create-a-ssh-key">Create a ssh key</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#key-checkup">Key checkup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#import-the-workspace">Import the workspace</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="database.html">Database storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configure.html">Configure</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Database storage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
@@ -83,9 +78,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Configure</li>
+      <li>Database storage</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/GenghisTask/GenghisTask.github.io/blob/main/install/configure.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/GenghisTask/GenghisTask.github.io/blob/main/install/database.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -93,46 +88,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="configure">
-<h1>Configure<a class="headerlink" href="#configure" title="Permalink to this heading"></a></h1>
-<p>You can use right away the webapp, but
-it’s best to configure it properly (mainly create a ssh key pair) to be
-able to save your modifications. If you do not fork and change GIT_REPO
-url to match your fork like
-GIT_REPO=‘<a class="reference external" href="ssh://git&#64;github.com/YouGit/Management.git">ssh://git&#64;github.com/YouGit/Management.git</a>’ you may not be
-able to save your modifications, tasks, schedule, etc…</p>
-<p>If you start the application for the first time, the webapp
-<a class="reference external" href="http://127.0.0.1:3000/#/Graphs">http://127.0.0.1:3000/#/Graphs</a> reveals three tasks. You can run the task
-in order to configure the application if you don’t want to do it
-manually.</p>
-<section id="create-a-ssh-key">
-<h2>Create a ssh key<a class="headerlink" href="#create-a-ssh-key" title="Permalink to this heading"></a></h2>
-<p>You need to create a ssh key pair for the app. Run the
-first task (start arrow on the graph) to generate a key. Retrieve the
-public key from the stdout log file and add it to the remote git
-repository fork.</p>
-</section>
-<section id="key-checkup">
-<h2>Key checkup<a class="headerlink" href="#key-checkup" title="Permalink to this heading"></a></h2>
-<p>Check if the remote git repository url is well
-configured and if it accepts the key. Run the second task. Control the
-STDERR file for this second task.</p>
-</section>
-<section id="import-the-workspace">
-<h2>Import the workspace<a class="headerlink" href="#import-the-workspace" title="Permalink to this heading"></a></h2>
-<p>Override this first time
-configuration with the content of the remote git repository corresponding to GIT_REPO, run the
-third task.</p>
-<p>Now, you can create  <a class="reference internal" href="../basic/newtask.html"><span class="doc">your own tasks</span></a> and  <a class="reference internal" href="../basic/remotely.html"><span class="doc">your own environnements</span></a></p>
-</section>
+  <section id="database-storage">
+<h1>Database storage<a class="headerlink" href="#database-storage" title="Permalink to this heading"></a></h1>
+<p>Data will be stored in plain text if no credentials.json file is configured. You can use the webapp that way without further configuration.</p>
+<p>However, you can choose to persist in your data in postgres, mysql, or any relational database supported by <cite>knexjs &lt;https://knexjs.org/&gt;</cite>, the database manager.</p>
+<p>For example, create a credentials.json file with the folowing JSON to store your data in a sqlite database:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">client</span><span class="p">:</span> <span class="s1">&#39;sqlite3&#39;</span><span class="p">,</span>
+    <span class="n">connection</span><span class="p">:</span> <span class="p">{</span>
+        <span class="n">filename</span><span class="p">:</span> <span class="s2">&quot;/app/data/api/mydb.sqlite&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Add the folowing startup parameter : -v <code class="docutils literal notranslate"><span class="pre">`pwd`</span></code>/credentials.json:/app/credentials.json</p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="10-install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="database.html" class="btn btn-neutral float-right" title="Database storage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="configure.html" class="btn btn-neutral float-left" title="Configure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../basic/10-definition.html" class="btn btn-neutral float-right" title="Presentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

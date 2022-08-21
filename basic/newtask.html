@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Run a task remotely" href="remotely.html" />
-    <link rel="prev" title="Configure" href="../install/configure.html" /> 
+    <link rel="prev" title="Presentation" href="10-definition.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,20 +45,18 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../install/10-install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/configure.html">Configure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/database.html">Database storage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Create your own task</a></li>
-<li class="toctree-l1"><a class="reference internal" href="remotely.html">Run a task remotely</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-definition.html">Presentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Create your own task</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-file-script">Create file script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pull-the-script">Pull the script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#find-the-script">Find the script</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Recipe</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../recipe/hdparm.html">Hdparm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recipe/hook.html">Hook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recipe/python.html">Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recipe/rclone.html">Rclone</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recipe/rsync.html">Rsync</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recipe/sql.html">Sql</a></li>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remotely.html">Run a task remotely</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source code</span></p>
 <ul>
@@ -99,18 +97,27 @@
 <h1>Create your own task<a class="headerlink" href="#create-your-own-task" title="Permalink to this heading"></a></h1>
 <p>You cannot inject code within the task scheduler directly (if you can,
 please file an issue, you discovered a vulnerability, congratulation).</p>
-<p>1/ For safety reason, you need to commit here, in the shell folder, a
-script first. If the remote git repository is a Github, Gitlab, Gogs or
-Gitea it should be easy to add some new file with their web editor. 2/
-Pull the script into the application, using the “Restore” button 3/ The
-script file should now be listed when you will create or update a job.</p>
+<section id="create-file-script">
+<h2>Create file script<a class="headerlink" href="#create-file-script" title="Permalink to this heading"></a></h2>
+<p>For safety reason, you need to commit here, in the shell folder, a
+script first. If the remote git repository GIT_REPO is a Github, Gitlab, Gogs or
+Gitea it should be easy to add some new file with their web editor.</p>
+</section>
+<section id="pull-the-script">
+<h2>Pull the script<a class="headerlink" href="#pull-the-script" title="Permalink to this heading"></a></h2>
+<p>Pull the script into the application, using the “Pull” button</p>
+</section>
+<section id="find-the-script">
+<h2>Find the script<a class="headerlink" href="#find-the-script" title="Permalink to this heading"></a></h2>
+<p>The script file should now be listed when you will create or update a job.</p>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../install/configure.html" class="btn btn-neutral float-left" title="Configure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="10-definition.html" class="btn btn-neutral float-left" title="Presentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="remotely.html" class="btn btn-neutral float-right" title="Run a task remotely" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

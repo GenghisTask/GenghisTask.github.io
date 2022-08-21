@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Hdparm" href="../recipe/hdparm.html" />
+    <link rel="next" title="Genghistask.github.io" href="../developer/doc.html" />
     <link rel="prev" title="Create your own task" href="newtask.html" /> 
 </head>
 
@@ -45,24 +45,32 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../install/10-install.html">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/configure.html">Configure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/database.html">Database storage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="10-definition.html">Presentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="newtask.html">Create your own task</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Run a task remotely</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#run-through-a-ssh-connection">Run through a ssh connection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#run-a-task-inside-a-docker-container">Run a task inside a docker container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#through-a-ssh-connection">Through a ssh connection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#edit-the-env-file">Edit the env file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pull-the-file">Pull the file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#find-the-new-env">Find the new env</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-server">Configure server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#inside-a-docker-container">Inside a docker container</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Edit the env file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Pull the file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Find the new env</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#kubernetes">Kubernetes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Edit the env file</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Recipe</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../recipe/hdparm.html">Hdparm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recipe/hook.html">Hook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recipe/python.html">Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recipe/rclone.html">Rclone</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recipe/rsync.html">Rsync</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../recipe/sql.html">Sql</a></li>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source code</span></p>
 <ul>
@@ -103,25 +111,51 @@
 <h1>Run a task remotely<a class="headerlink" href="#run-a-task-remotely" title="Permalink to this heading"></a></h1>
 <p>By default, all task are run locally, but is is possible to specify a
 remote environment where the task should be executed.</p>
-<section id="run-through-a-ssh-connection">
-<h2>Run through a ssh connection<a class="headerlink" href="#run-through-a-ssh-connection" title="Permalink to this heading"></a></h2>
+<section id="through-a-ssh-connection">
+<h2>Through a ssh connection<a class="headerlink" href="#through-a-ssh-connection" title="Permalink to this heading"></a></h2>
 <p>It is possible to define a ssh host where a task can be executed.</p>
-<p>You cannot define an ssh remote within the task scheduler directly. 1/
-For safety reason, you need to edit the ssh/config file first in the
-environment folder of the git repository. 2/ Pull the config file into
-the application, using the “Restore” button 3/ The ssh remote should now
-be listed as environment. 4/ Remember to also add the public ssh key of
-the app to the ssh server.</p>
+<p>You cannot define an ssh remote within the task scheduler directly.</p>
+<section id="edit-the-env-file">
+<h3>Edit the env file<a class="headerlink" href="#edit-the-env-file" title="Permalink to this heading"></a></h3>
+<p>For safety reason, you need to edit the ssh/config file first in the environment folder of the git repository.</p>
 </section>
-<section id="run-a-task-inside-a-docker-container">
-<h2>Run a task inside a docker container<a class="headerlink" href="#run-a-task-inside-a-docker-container" title="Permalink to this heading"></a></h2>
+<section id="pull-the-file">
+<h3>Pull the file<a class="headerlink" href="#pull-the-file" title="Permalink to this heading"></a></h3>
+<p>Pull the config file into the application, using the Pull button</p>
+</section>
+<section id="find-the-new-env">
+<h3>Find the new env<a class="headerlink" href="#find-the-new-env" title="Permalink to this heading"></a></h3>
+<p>The ssh remote should now be listed as environment.</p>
+</section>
+<section id="configure-server">
+<h3>Configure server<a class="headerlink" href="#configure-server" title="Permalink to this heading"></a></h3>
+<p>Remember to also add the public ssh key of the app to this ssh server.</p>
+</section>
+</section>
+<section id="inside-a-docker-container">
+<h2>Inside a docker container<a class="headerlink" href="#inside-a-docker-container" title="Permalink to this heading"></a></h2>
 <p>It is possible to define an docker container image where a task can be
 executed.</p>
-<p>You cannot define a docker image within the task scheduler directly. 1/
-For safety reason, you need to add the image as service in the
-docker-compose file first in the git repository 2/ Pull the config file
-into the application, using the “Restore” button 3/ The docker image
-should now be listed as environment.</p>
+<p>You cannot define a docker image within the task scheduler directly.</p>
+<section id="id1">
+<h3>Edit the env file<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<p>For safety reason, you need to add the image as service in the docker-compose file first in the git repository</p>
+</section>
+<section id="id2">
+<h3>Pull the file<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<p>Import the config file into the application, using the Pull button</p>
+</section>
+<section id="id3">
+<h3>Find the new env<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<p>The docker image should now be listed as environment.</p>
+</section>
+</section>
+<section id="kubernetes">
+<h2>Kubernetes<a class="headerlink" href="#kubernetes" title="Permalink to this heading"></a></h2>
+<section id="id4">
+<h3>Edit the env file<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
+<p>Create a manifests file in the ./environment/kubectl/ directory</p>
+</section>
 </section>
 </section>
 
@@ -130,7 +164,7 @@ should now be listed as environment.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="newtask.html" class="btn btn-neutral float-left" title="Create your own task" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../recipe/hdparm.html" class="btn btn-neutral float-right" title="Hdparm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../developer/doc.html" class="btn btn-neutral float-right" title="Genghistask.github.io" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

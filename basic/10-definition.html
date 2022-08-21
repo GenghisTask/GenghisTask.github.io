@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Presentation &mdash; Genghistask 2.1.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Create your own task" href="newtask.html" />
+    <link rel="prev" title="Database storage" href="../install/database.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Genghistask
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Install</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install/10-install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/configure.html">Configure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/database.html">Database storage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Presentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#workspace">Workspace</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#environment-docker-docker-compose-yml">./environment/docker/docker-compose.yml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#environment-ssh-config">./environment/ssh/config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#environment-kubectl">./environment/kubectl/</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shell">./shell/</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#swagger">./swagger/</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#act">./.act/</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#user-interface">User Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#menu">Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#graph">Graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#projects">Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#secrets">Secrets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#environments">Environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tokens">Tokens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jobs">Jobs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="newtask.html">Create your own task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remotely.html">Run a task remotely</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer/doc.html">Genghistask.github.io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/ui.html">Ui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/workspace.html">Workspace</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://www.paypal.com/donate/?cmd=_s-xclick&amp;hosted_button_id=DNXMX4C5MFAZC&amp;source=url">Donate</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Genghistask</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Presentation</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/GenghisTask/GenghisTask.github.io/blob/main/basic/10-definition.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="presentation">
+<h1>Presentation<a class="headerlink" href="#presentation" title="Permalink to this heading"></a></h1>
+<section id="workspace">
+<h2>Workspace<a class="headerlink" href="#workspace" title="Permalink to this heading"></a></h2>
+<section id="environment-docker-docker-compose-yml">
+<h3>./environment/docker/docker-compose.yml<a class="headerlink" href="#environment-docker-docker-compose-yml" title="Permalink to this heading"></a></h3>
+<p>Define services in docker-compose.yml file so they can be run in as environment.</p>
+</section>
+<section id="environment-ssh-config">
+<h3>./environment/ssh/config<a class="headerlink" href="#environment-ssh-config" title="Permalink to this heading"></a></h3>
+<p>Define host in OpenSSH SSH client configuration files so they can be run in as environment.</p>
+</section>
+<section id="environment-kubectl">
+<h3>./environment/kubectl/<a class="headerlink" href="#environment-kubectl" title="Permalink to this heading"></a></h3>
+<p>Directory for Kubernetes manifests</p>
+</section>
+<section id="shell">
+<h3>./shell/<a class="headerlink" href="#shell" title="Permalink to this heading"></a></h3>
+<p>Directory to store your script files.
+A script file can be written in any language (bash, python, node, sql, etc).
+A script may start with a shebang to specify the right interpreter.</p>
+</section>
+<section id="swagger">
+<h3>./swagger/<a class="headerlink" href="#swagger" title="Permalink to this heading"></a></h3>
+<p>Directory where data generated by the user interface will be under version control.</p>
+</section>
+<section id="act">
+<h3>./.act/<a class="headerlink" href="#act" title="Permalink to this heading"></a></h3>
+<p>Configuration file for <a class="reference external" href="https://github.com/nektos/act">act</a></p>
+</section>
+</section>
+<section id="user-interface">
+<h2>User Interface<a class="headerlink" href="#user-interface" title="Permalink to this heading"></a></h2>
+<section id="menu">
+<h3>Menu<a class="headerlink" href="#menu" title="Permalink to this heading"></a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Checkout</p></td>
+<td><p>Reset all modification since last pull</p></td>
+</tr>
+<tr class="row-even"><td><p>Push</p></td>
+<td><p>Send all modification since last pull to GIT_REPO</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pull</p></td>
+<td><p>Receive all modification since last pull from GIT_REPO</p></td>
+</tr>
+<tr class="row-even"><td><p>Git</p></td>
+<td><p>External link to GIT_REPO</p></td>
+</tr>
+<tr class="row-odd"><td><p>↻ Reload</p></td>
+<td><p>Reload frontend with server</p></td>
+</tr>
+<tr class="row-even"><td><p><cite>+</cite> create new task</p></td>
+<td><p>Open form to edit a new task</p></td>
+</tr>
+<tr class="row-odd"><td><p>save to crontab</p></td>
+<td><p>Register all tasks with a schedule into internal crontab</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="graph">
+<h3>Graph<a class="headerlink" href="#graph" title="Permalink to this heading"></a></h3>
+<p>This is a representation of all task presently saved distributed in their environment.</p>
+</section>
+<section id="projects">
+<h3>Projects<a class="headerlink" href="#projects" title="Permalink to this heading"></a></h3>
+<p>Create a project to classify your task.</p>
+</section>
+<section id="secrets">
+<h3>Secrets<a class="headerlink" href="#secrets" title="Permalink to this heading"></a></h3>
+<p>Create a global environment variable accessible when your task will run.</p>
+</section>
+<section id="environments">
+<h3>Environments<a class="headerlink" href="#environments" title="Permalink to this heading"></a></h3>
+<p>This is a list of available environnement.</p>
+</section>
+<section id="tokens">
+<h3>Tokens<a class="headerlink" href="#tokens" title="Permalink to this heading"></a></h3>
+<p>Restrict execution of all tasks within a project with a new token.</p>
+</section>
+<section id="jobs">
+<h3>Jobs<a class="headerlink" href="#jobs" title="Permalink to this heading"></a></h3>
+<p>This is a list of all task presently saved.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../install/database.html" class="btn btn-neutral float-left" title="Database storage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="newtask.html" class="btn btn-neutral float-right" title="Create your own task" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Pascal Noisette.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
