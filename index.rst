@@ -34,13 +34,13 @@ GenghisTask the task scheduler.
 
    basic/*
 
-.. toctree::
-   :glob:
-   :maxdepth: 3
-   :hidden:
-   :caption: Recipe
-
-   recipe/*
+#.. toctree::
+#   :glob:
+#   :maxdepth: 3
+#   :hidden:
+#   :caption: Recipe
+#
+#   recipe/*
 
 .. toctree::
    :glob:
@@ -99,6 +99,6 @@ New use cases :
 .. list-table:: Featured
    :widths: 25 50
 
-   * - Quickstart
+   * - :doc:`Quickstart </quickstart>`
      - .. image:: assets/terminal.png
           :target: quickstart.html
